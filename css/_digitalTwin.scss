@@ -1,0 +1,59 @@
+.mainVisual{
+    position: relative;
+    overflow: hidden;
+}
+#click-area{
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    left: 0px;
+    top: 0px;
+    z-index: 200;
+  }
+  
+#main-canvas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: blue;
+    z-index: 199;
+  }
+
+#media-area{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 300;
+}
+
+#canvas-pop-area{
+  z-index: 500;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+#media-load-img{
+  position: absolute;
+  z-index: 301;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  visibility: visible;
+}
+
+// #canvas-pop-area-none{
+//   z-index: 1000;
+//   visibility: hidden;
+//   position: absolute;
+//   width: 30%;
+//   height: 30%;
+//   left: 35%;
+//   top: 35%;
+// }

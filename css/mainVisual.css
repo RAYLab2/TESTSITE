@@ -1,0 +1,712 @@
+@charset "UTF-8";
+.ppl {
+  width: 100%;
+  min-width: 1166px;
+  padding: 24px;
+  background-color: #ffffff !important;
+}
+.ppl article {
+  font-size: 16px;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 16px;
+}
+.ppl h3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.ppl p {
+  font-size: 16px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+.ppl .inner {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.ppl .inner > div {
+  font-size: 0;
+}
+.ppl .inner > div:not(:first-child) {
+  margin-top: 16px;
+}
+.ppl .sepL,
+.ppl .sepR {
+  display: inline-block;
+  vertical-align: top;
+}
+.ppl .sepL {
+  margin-right: 16px;
+}
+.ppl .sep1 .sepL {
+  width: 1046px;
+}
+.ppl .sep1 .sepR {
+  width: calc(100% - 1062px);
+}
+.ppl .sep1 .sepR article {
+  width: 100%;
+  height: 163.6666666667px;
+  color: #ffffff;
+  position: relative;
+}
+.ppl .sep1 .sepR article ul {
+  width: 55%;
+  max-width: 240px;
+  position: absolute;
+  top: 55%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+.ppl .sep1 .sepR article ul li {
+  line-height: 52px;
+  padding: 8px;
+  position: relative;
+}
+.ppl .sep1 .sepR article ul li span:last-child {
+  font-size: 44px;
+  vertical-align: top;
+  line-height: 42px;
+  font-weight: 200;
+  float: right;
+}
+.ppl .sep1 .sepR article ul li:first-child::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(90deg, #fff, #fff, transparent);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.ppl .sep1 .sepR article:not(:last-child) {
+  margin-bottom: 16px;
+}
+.ppl .sep2 .sepL {
+  width: calc(100% - 716px);
+}
+.ppl .sep2 .sepR {
+  width: 700px;
+}
+.ppl .mainVisual {
+  width: 100%;
+  height: 523px;
+}
+.ppl .mainVisual h2 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  color: #fff;
+  font-size: 24px;
+  text-align: right;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+.ppl .mainVisual img {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.ppl .mainVisual #refresh {
+  cursor: pointer;
+}
+.ppl .mainVisual #mvButton-text-p {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1001;
+  left: 110px;
+  bottom: 39px;
+  font-size: 12px;
+}
+.ppl .mainVisual #mvButton-text-g {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1001;
+  left: 80px;
+  bottom: 98px;
+  font-size: 12px;
+}
+.ppl .mainVisual .mvButton-text-color {
+  color: rgba(255, 255, 255, 0.5);
+}
+.ppl .mainVisual .text-size-up-move {
+  animation: text-size-up-move-animation 0.5s 0s both;
+  color: rgb(255, 255, 255);
+}
+.ppl .mainVisual .text-size-up {
+  animation: text-size-up-animation 0.5s 0s both;
+  color: rgb(255, 255, 255);
+}
+.ppl .mainVisual .text-p-start {
+  transform: translate(100%, -50%) scale(1.5);
+  color: rgb(255, 255, 255);
+}
+@keyframes text-size-up-move-animation {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(100%, -50%) scale(1.5);
+  }
+}
+@keyframes text-size-up-animation {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1.2);
+  }
+}
+.ppl .mainVisual .mvButton {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1000;
+}
+.ppl .mainVisual .mvButton._p {
+  bottom: 20px;
+  left: 50px;
+  transition: all 0.5s ease 0s;
+  background: url(../img/pohang.png) no-repeat center, #878787;
+  background-size: 65%;
+  opacity: 80%;
+  width: 43px;
+  height: 43px;
+}
+.ppl .mainVisual .mvButton._p.big {
+  background: url(../img/pohang.png) no-repeat center, radial-gradient(circle, #2079EC, white);
+  width: 65px;
+  height: 65px;
+  opacity: 100%;
+}
+.ppl .mainVisual .mvButton._g {
+  bottom: 80px;
+  left: 20px;
+  transition: all 0.5s ease 0s;
+  background: url(../img/gwangyang.png) no-repeat center, #878787;
+  background-size: 65%;
+  opacity: 80%;
+  width: 43px;
+  height: 43px;
+}
+.ppl .mainVisual .mvButton._g.big {
+  background: url(../img/gwangyang.png) no-repeat center, radial-gradient(circle, #2079EC, white);
+  width: 65px;
+  height: 65px;
+  opacity: 100%;
+}
+.ppl .mainVisual .mvButton:hover:not(.big) {
+  transform: scale(1.05);
+}
+.ppl .tope,
+.ppl .slab,
+.ppl .indiv {
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 6px;
+}
+.ppl .tope {
+  background: url(../img/torpedo.png) no-repeat left calc(5% - 50px) bottom -50px, #13558E;
+  background-size: contain;
+  cursor: pointer;
+}
+.ppl .tope:hover {
+  background-color: #0067C1;
+}
+.ppl .slab {
+  background: url(../img/slab.png) no-repeat left calc(5% - 50px) bottom -50px, #297DC6;
+  background-size: contain;
+  cursor: pointer;
+}
+.ppl .slab:hover {
+  background-color: #3E97E3;
+}
+.ppl .indiv {
+  background: url(../img/user.png) no-repeat left calc(10% + 10px) bottom -30px, #6DACE2;
+  background-size: contain;
+  cursor: pointer;
+}
+.ppl .indiv:hover {
+  background-color: #89BEEC;
+}
+.ppl .chart {
+  width: 100%;
+  height: 300px;
+}
+.ppl .chart .highcharts-figure {
+  width: 100%;
+  height: 240px;
+  margin: 0;
+  margin-top: 24px;
+}
+.ppl .chart .highcharts-figure #mainChart {
+  width: 100%;
+  height: 100%;
+}
+.ppl .eft {
+  height: 130px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.ppl .eft ul {
+  width: 100%;
+  font-size: 0;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+}
+.ppl .eft ul li {
+  display: inline-block;
+  width: 50%;
+  vertical-align: bottom;
+  text-align: center;
+  cursor: pointer;
+}
+.ppl .eft ul li img {
+  width: 88px;
+  vertical-align: bottom;
+}
+.ppl .eft ul li:nth-child(1) .data > span {
+  color: #2079EC;
+}
+.ppl .eft ul li:nth-child(2) .data > span {
+  color: #00B549;
+}
+.ppl .eft .data {
+  display: inline-block;
+  vertical-align: bottom;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-left: 24px;
+}
+.ppl .eft .data p {
+  margin-top: 8px;
+}
+.ppl .noti,
+.ppl .guide {
+  display: inline-block;
+  height: 154px;
+  vertical-align: top;
+}
+.ppl .noti {
+  width: calc(100% - 266px);
+  margin-right: 16px;
+  position: relative;
+}
+.ppl .noti > a {
+  color: #999999;
+  font-size: 13px;
+  padding: 3px 0;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+.ppl .noti > a:hover {
+  color: #333333;
+}
+.ppl .noti .data {
+  margin-top: 12px;
+}
+.ppl .noti .data li {
+  margin-top: 4px;
+  position: relative;
+  cursor: pointer;
+}
+.ppl .noti .data li:hover > p {
+  font-weight: 500;
+}
+.ppl .noti .data li:hover > span {
+  font-weight: 500;
+}
+.ppl .noti .data li > span {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.ppl .guide {
+  width: 250px;
+  text-align: center;
+}
+.ppl .guide h3 {
+  text-align: left;
+}
+.ppl .guide img {
+  width: 88px;
+  margin: 8px 0;
+}
+
+.ppl.mid .sep1 .sepL {
+  width: 880px;
+}
+.ppl.mid .sep1 .sepR {
+  width: calc(100% - 896px);
+}
+.ppl.mid .sep1 .sepR article {
+  height: 136px;
+}
+.ppl.mid .sep2 .sepL {
+  width: calc(100% - 666px);
+}
+.ppl.mid .sep2 .sepR {
+  width: 650px;
+}
+.ppl.mid .mainVisual {
+  height: 440px;
+}
+
+.ppl.low h3 {
+  font-size: 16px;
+}
+.ppl.low p {
+  font-size: 14px;
+}
+.ppl.low .sep1 .sepL {
+  width: 760px;
+}
+.ppl.low .sep1 .sepR {
+  width: calc(100% - 776px);
+}
+.ppl.low .sep1 .sepR article {
+  height: 116px;
+}
+.ppl.low .sep1 .sepR article ul {
+  max-width: 180px;
+  top: 60%;
+}
+.ppl.low .sep1 .sepR article ul li {
+  line-height: 32px;
+  padding: 4px;
+  font-size: 14px;
+}
+.ppl.low .sep1 .sepR article ul li span:last-child {
+  font-size: 28px;
+  line-height: 32px;
+}
+.ppl.low .sep2 .sepL {
+  width: calc(100% - 576px);
+}
+.ppl.low .sep2 .sepR {
+  width: 560px;
+}
+.ppl.low .mainVisual {
+  height: 380px;
+}
+.ppl.low .chart {
+  height: 280px;
+}
+.ppl.low .chart .highcharts-figure {
+  height: 220px;
+}
+.ppl.low .eft {
+  height: 120px;
+}
+.ppl.low .eft ul li:nth-child(1) {
+  width: 48%;
+}
+.ppl.low .eft ul li:nth-child(2) {
+  width: 52%;
+}
+.ppl.low .eft .data {
+  margin-left: 16px;
+  font-size: 24px;
+}
+.ppl.low .noti, .ppl.low .guide {
+  height: 144px;
+}
+.ppl.low .noti {
+  width: calc(100% - 196px);
+}
+.ppl.low .guide {
+  width: 180px;
+}
+
+.chart .highcharts-drilldown-axis-label {
+  fill: royalblue !important;
+  text-decoration: unset !important;
+}
+
+.modal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+.modal.notiModal article {
+  overflow: auto;
+}
+.modal article {
+  z-index: 1003;
+  width: 1100px;
+  height: 670px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+}
+.modal .close {
+  z-index: 1002;
+  width: 1100px;
+  height: 670px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+}
+.modal .close img.exit {
+  position: absolute;
+  top: 0px;
+  right: -50px;
+  cursor: pointer;
+}
+.modal img.help {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  cursor: pointer;
+  width: 25px;
+}
+.modal h4 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.modal.indivModal article {
+  padding: 0;
+}
+.modal.indivModal article h4 {
+  background: #fff;
+  width: 100%;
+  height: 90px;
+  border-radius: 4px;
+  padding: 50px 50px 10px 50px;
+}
+.modal.indivModal article .indiWrap {
+  height: 580px;
+  padding: 0px 50px 50px;
+  overflow-y: auto;
+}
+.modal.indivModal article .indiWrap h5 {
+  margin-top: 11px;
+}
+.modal h5 {
+  font-size: 14px;
+  margin-top: 21px;
+  position: relative;
+  padding-left: 16px;
+}
+.modal h5::before {
+  content: "";
+  width: 2px;
+  height: 25px;
+  background-color: #2079EC;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.modal table {
+  margin-top: 100px;
+}
+.modal table.m30 {
+  margin-top: 120px;
+}
+.modal table.m30 tr {
+  line-height: 1.5rem;
+}
+.modal table.m30 th {
+  height: 38px;
+}
+.modal table.m30 td {
+  height: 30px;
+}
+.modal table tr {
+  line-height: 2rem;
+}
+.modal table tr:hover {
+  background: #ddd;
+}
+.modal table th {
+  border-top: solid 2px #2079EC;
+  background: #eee;
+  height: 40px;
+  font-weight: normal;
+}
+.modal table th.w80 {
+  width: 80px;
+}
+.modal table th.w150 {
+  width: 150px;
+}
+.modal table td {
+  text-align: center;
+  border-bottom: solid 1px #eee;
+  height: 32px;
+  cursor: pointer;
+}
+.modal .modalChart-figure {
+  width: 90%;
+}
+.modal .modalChart-figure.full {
+  margin-top: 62px;
+}
+.modal .modalChart-figure.rel {
+  position: relative;
+  margin-top: 25px;
+}
+.modal #indivChart {
+  height: 415px;
+}
+.modal .compWrap {
+  margin: 16px 0 0;
+  position: relative;
+}
+.modal .compWrap.abs {
+  position: absolute;
+  top: -20px;
+  left: -40px;
+  z-index: 1002;
+}
+.modal .compWrap li {
+  vertical-align: top;
+}
+.modal .compWrap button {
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  background: rgb(133, 147, 173);
+}
+.modal .compWrap button:hover {
+  background-color: rgb(17, 75, 122);
+}
+.modal .compWrap .btnWrap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.modal .compWrap .btnWrap.notiBtn {
+  bottom: -70px;
+  right: 0;
+}
+.modal .compWrap .btnWrap button {
+  height: 35px;
+  width: 120px;
+}
+.modal .compWrap .btnWrap2 button {
+  width: 35px;
+  height: 35px;
+  margin-right: 4px;
+}
+.modal .compWrap .btnWrap2 button:hover {
+  background-color: rgb(17, 75, 122);
+}
+.modal .compWrap .btnWrap2 .left2 {
+  background: url(../img/icon_left2.png) no-repeat 50% 50% rgb(133, 147, 173);
+}
+.modal .compWrap .btnWrap2 .left1 {
+  background: url(../img/icon_left.png) no-repeat 50% 50% rgb(133, 147, 173);
+}
+.modal .compWrap .btnWrap2 .right1 {
+  background: url(../img/Icon_right.png) no-repeat 50% 50% rgb(133, 147, 173);
+}
+.modal .compWrap .btnWrap2 .right2 {
+  background: url(../img/Icon_right2.png) no-repeat 50% 50% rgb(133, 147, 173);
+}
+.modal .compWrap .btnWrap2 .minus {
+  background: url(../img/Icon_minus.png) no-repeat 50% 50% rgb(133, 147, 173);
+}
+.modal .compWrap .btnWrap2 .plus {
+  background: url(../img/Icon_plus.png) no-repeat 50% 50% rgb(133, 147, 173);
+}
+.modal .compWrap .compBox {
+  margin-right: 16px;
+  display: inline-block;
+}
+.modal .compWrap .compBox label {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 35px;
+  margin-right: 16px;
+  vertical-align: top;
+}
+.modal .compWrap .compBox .compSelect {
+  width: 100px;
+  height: 35px;
+  border-radius: 4px;
+  background: url(../img/icon_selectbox.png) no-repeat 95% 50% #fff; /* 네이티브 화살표를 커스텀 화살표로 대체 */
+  border: 1px solid #999;
+  -webkit-appearance: none; /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  font-size: 16px;
+  vertical-align: top;
+}
+.modal .compWrap .compBox .compSelect.x2 {
+  width: 200px;
+}
+.modal .compWrap .compBox .compSelect option {
+  margin-left: 0;
+  color: #999;
+}
+.modal .compWrap .compBox .compSelect:focus {
+  border: 1px solid #2079EC;
+}
+
+.mainVisual {
+  position: relative;
+  overflow: hidden;
+}
+
+#click-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 200;
+}
+
+#main-canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background-color: blue;
+  z-index: 199;
+}
+
+#media-area {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 300;
+}
+
+#canvas-pop-area {
+  z-index: 500;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+#media-load-img {
+  position: absolute;
+  z-index: 301;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  visibility: visible;
+}/*# sourceMappingURL=mainVisual.css.map */

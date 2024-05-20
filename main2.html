@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>main2</title>
+
+  <script src="./js/jquery-3.6.0.min.js"></script>
+
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/mainVisual.css">
+</head>
+
+<body>
+  <section class="ppl">
+    <div class="inner">
+      <div class="sep1">
+        <div class="sepL">
+          <article class="mainVisual">
+            <button class="mvButton _p big"></button>jpg
+            <div id = "mvButton-text-p" class = "text-p-start">포항</div>
+            <button class="mvButton _g"></button>
+            <div id = "mvButton-text-g" class = "mvButton-text-color">광양</div>
+            <img src="img/refresh.png" id="refresh">
+            <canvas id = "main-canvas"></canvas>
+            <img src = "./img/alpha.png" id = "click-area" usemap = "#process_maps">
+            <div id = "canvas-pop-area"></div>
+            <div id = "canvas-pop-area-none"></div>
+            <map name="process_maps">
+              <area class = "process1" shape ="poly" coords = "">
+              <area class = "process2" shape ="poly" coords = "">
+              <area class = "process3" shape ="poly" coords = "">
+              <area class = "process4" shape ="poly" coords = "">
+              <area class = "process5" shape ="poly" coords = "">
+            </map>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

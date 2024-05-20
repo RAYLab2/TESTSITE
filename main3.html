@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <title>Posco WebGJ</title>
+    <script src="./js/babylonJS/babylon.max.js"></script>
+    <script src="./js/babylonJS/loader/babylon.glTF2FileLoader.js"></script>
+    <script src="./js/babylonJS/babylon.waterMaterial.js"></script>
+    <script src="./js/babylonJS/gui/babylon.gui.js"></script>
+    <script src="./js/UIDialog.js"></script>
+
+    <style>
+        html, body
+        {
+          overflow: hidden;
+          /*width: 1130px;
+          height: 490px;*/
+          width: 100%;
+          height: 100%;
+          padding:0px;
+          margin:0px;
+          position: fixed;
+      }
+      #renderCanvas
+      {
+        /*max-width:800px;
+        max-height:330px;*/
+
+                /*max-width:1500px;
+        max-height:618px;*/
+        width: 100%;
+        height: 100%;
+        outline: 0;
+        touch-action: none;
+      }
+
+    </style>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script type="text/javascript" src="./js/app.js" charset="utf-8"></script>
+    <script>
+
+        var steelworks ={};
+        steelworks.kpi_data = [ { title : "가동율",date : "2018.05.18",value : "98 %"},{title : "생산량", date : "2018.05.18", value : "233,231,232,130,154 ton"} ];
+        steelworks.smartization_fac = [  "KYJ03", "KHP01", "KJG03" ];//, "KYY03",];
+        steelworks.area_data = [
+            {id : "KHP01",name : "후판", stat: 2,message : ["5제강>전로>2전로,공정장애,32분 경과","3제강>전로>2전로,공정장애,32분 경과"]},
+            
+            {id : "KSG01",name : "1소결", stat: 1, message : ["3열련>전로,공정장애,32분 경과"]},
+            {id : "KSG02",name : "2소결", stat: 2,message : ["5제강>전로>2전로,공정장애,32분 경과","3제강>전로>2전로,공정장애,32분 경과"]},
+            {id : "KSG03",name : "3소결", stat: 3,message : ["3제강>전로>2전로,공정장애,32분 경과","3제강>전로>2전로,공정장애,32분 경과","5제강>전로>2전로,공정장애,32분 경과"]},
+            {id : "KSG04",name : "4소결", stat: 0 },
+            {id : "KGR01",name : "1고로",stat: 2, message : ["1냉연>압연,공정장애,32분 경과","3제강>전로>2전로,공정장애,32분 경과"] },
+
+            {id : "KYY01",name : "1열연",stat: 1, message : ["1냉연>압연,공정장애,32분 경과","3제강>전로>2전로,공정장애,32분 경과"]},
+
+            {id : "KCL04",name : "4CGL",stat: 1, message : ["1냉연>압연,공정장애,32분 경과","3제강>전로>2전로,공정장애,32분 경과"]},
+            {id : "KJG02",name : "2제강",stat: 3, message : ["1냉연>압연,공정장애,32분 경과","3제강>전로>2전로,공정장애,32분 경과"]},
+        ];
+
+
+        steelworks.factoryop = [
+
+            {fac_id : "KYY03",name : "3열연", kpi_data : [{icon_id: 1,title : "가동률",date : "2018.05.18",value : "90.9 %", },{icon_id: 2,title : "작업률",date : "2018.05.18",value : "98 %"},{icon_id: 3,title : "생상량",date : "2018.05.18",value : "525,234,234,332,123 ton"},{icon_id: 4,title : "품질부적합률",date : "2018.05.18",value : "98 %"}],
+             fac_info : [{id: "KYY0311",title : "후판 설비상태 이상감시 시스템", link_url:"http://www.posco.co.kr" },{id: "KYY0312",title : "후판 압연기 구동계 설비상태 모니터링" },{id: "KYY0313",title : "후판 IoT 이용 Table Roller/모터 설비트러블 진단기술" },{id: "KYY0321",title : "후판 품절 실시간 센싱으로 불량발생 저감" },{id: "KYY0322",title : "후판 품질계측기 Utility 상태감시시스템 구축" },{id: "KYY0323",title : "테스트 문구 입니다." },{id: "KYY0331",title : "테스트 문구 입니다." },{id: "KYY0332",title : "테스트 문구 입니다." },{id: "KYY0333",title : "테스트 문구 입니다." },{id: "KYY0341",title : "테스트 문구 입니다." },{id: "KYY0342",title : "테스트 문구 입니다." },{id: "KYY0343",title : "테스트 문구 입니다." },{id: "KYY0351",title : "테스트 문구 입니다." },{id: "KYY0352",title : "테스트 문구 입니다." },{id: "KYY0353",title : "테스트 문구 입니다." }]
+            },
+            {fac_id : "KHP01",name : "후판",kpi_data : [{icon_id: 1,title : "가동률",date : "2018.05.18",value : "90.9 %", },{icon_id: 2,title : "작업률",date : "2018.05.18",value : "98 %"},{icon_id: 3,title : "생상량",date : "2018.05.18",value : "525,234,234,332,123 ton"},{icon_id: 4,title : "품질부적합률",date : "2018.05.18",value : "98 %"}],
+             fac_info : [{id: "KHP0111",title : "후판 설비상태 이상감시 시스템", link_url:"http://www.posco.co.kr" },{id: "KHP0112",title : "후판 압연기 구동계 설비상태 모니터링" },{id: "KHP0113",title : "후판 IoT 이용 Table Roller/모터 설비트러블 진단기술" },{id: "KHP0121",title : "후판 품절 실시간 센싱으로 불량발생 저감" },{id: "KHP0122",title : "후판 품질계측기 Utility 상태감시시스템 구축" },{id: "KHP0123",title : "테스트 문구 입니다." },{id: "KHP0131",title : "테스트 문구 입니다." },{id: "KHP0132",title : "테스트 문구 입니다." },{id: "KHP0133",title : "테스트 문구 입니다." },{id: "KHP0141",title : "테스트 문구 입니다." },{id: "KHP0142",title : "테스트 문구 입니다." },{id: "KHP0143",title : "테스트 문구 입니다." },{id: "KHP0151",title : "테스트 문구 입니다." },{id: "KHP0152",title : "테스트 문구 입니다." },{id: "KHP0153",title : "테스트 문구 입니다." },{id: "KHP0161",title : "테스트 문구 입니다." },{id: "KHP0162",title : "테스트 문구 입니다." },{id: "KHP0163",title : "테스트 문구 입니다." }]
+            },
+            {fac_id : "KJG03",name : "3제강",kpi_data : [{icon_id: 1,title : "가동률",date : "2018.05.18",value : "90.9 %", },{icon_id: 2,title : "작업률",date : "2018.05.18",value : "98 %"},{icon_id: 3,title : "생상량",date : "2018.05.18",value : "525,234,234,332,123 ton"},{icon_id: 4,title : "품질부적합률",date : "2018.05.18",value : "98 %"}],
+             fac_info : [{id: "KJG0311",title : "후판 설비상태 이상감시 시스템", link_url:"http://www.posco.co.kr" },{id: "KJG0312",title : "후판 압연기 구동계 설비상태 모니터링" },{id: "KJG0313",title : "후판 IoT 이용 Table Roller/모터 설비트러블 진단기술" },{id: "KJG0321",title : "후판 품절 실시간 센싱으로 불량발생 저감" },{id: "KJG0322",title : "후판 품질계측기 Utility 상태감시시스템 구축" },{id: "KJG0323",title : "테스트 문구 입니다." },{id: "KJG0331",title : "테스트 문구 입니다." },{id: "KJG0332",title : "테스트 문구 입니다." },{id: "KJG0333",title : "테스트 문구 입니다." }]
+            },
+            {fac_id : "KYJ03",name : "3연주",kpi_data : [{icon_id: 1,title : "가동률",date : "2018.05.18",value : "90.9 %", },{icon_id: 2,title : "작업률",date : "2018.05.18",value : "98 %"},{icon_id: 3,title : "생상량",date : "2018.05.18",value : "525,234,234,332,123 ton"},{icon_id: 4,title : "품질부적합률",date : "2018.05.18",value : "98 %"}],
+             fac_info : [{id: "KYJ0311",title : "후판 설비상태 이상감시 시스템", link_url:"http://www.posco.co.kr" },{id: "KYJ0312",title : "후판 압연기 구동계 설비상태 모니터링" },{id: "KYJ0313",title : "후판 IoT 이용 Table Roller/모터 설비트러블 진단기술" },{id: "KYJ0321",title : "후판 품절 실시간 센싱으로 불량발생 저감" },{id: "KYJ0322",title : "후판 품질계측기 Utility 상태감시시스템 구축" },{id: "KYJ0323",title : "테스트 문구 입니다." },{id: "KYJ0331",title : "테스트 문구 입니다." },{id: "KYJ0332",title : "테스트 문구 입니다." },{id: "KYJ0333",title : "테스트 문구 입니다." },{id: "KYJ0341",title : "테스트 문구 입니다." },{id: "KYJ0342",title : "테스트 문구 입니다." },{id: "KYJ0343",title : "테스트 문구 입니다." }]
+            }
+        ];
+
+        /// stat_color 대신 stat로 변경  -1: 비활성, 0: 활성, (1,2,3 이상 상태)으로 사용
+        /// 말풍선의 message는 array로 변경, 글자의 색상 변경을 위해서 문자 ','로 분리 하고 있음
+        /// 공정 세부 데이터에 icon_id를 1,2,3,4으로 사용
+        //////////////////////////////////
+
+        window.addEventListener('DOMContentLoaded',function(){babylonInit(steelworks,false,0);});
+
+        window.addEventListener("focus", function(event){
+            if(!bFocus)
+                animationPlay();
+
+            bFocus = true;
+            console.log(event);
+            console.log("bFocus: true");
+        }, false);
+
+        window.addEventListener("blur", function( event ) {
+            if(event.srcElement === window)
+            {
+                bFocus = false;
+                animationPause();
+                console.log("bFocus: false");
+            }
+            //let canvas = document.getElementById('renderCanvas');
+            console.log(event);
+          }, true);
+
+    </script>
+</body>
+</html>

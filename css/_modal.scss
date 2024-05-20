@@ -1,0 +1,280 @@
+
+  //모달창
+  .modal{
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    display: none;
+ 
+    &.notiModal{
+      article{
+        overflow: auto;
+      }
+    }
+
+    article{
+      z-index: 1003;
+      width: 1100px;
+      height: 670px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      padding: 50px;
+    }
+    .close{
+      z-index: 1002;
+      width: 1100px;
+      height: 670px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      padding: 50px;
+
+      img.exit{
+        position: absolute;
+        top: 0px;
+        right: -50px;
+        cursor: pointer;
+      }
+    }
+       
+    
+
+    img.help{
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      cursor: pointer;
+      width: 25px;
+    }
+
+    h4{
+      font-size: 24px;
+      font-weight: 500;
+    }
+    &.indivModal{
+        article{
+            padding: 0;
+
+            h4{
+            background: #fff;
+            width: 100%;
+            height: 90px;
+            border-radius: 4px;
+            padding: 50px 50px 10px 50px;
+            }
+            .indiWrap{
+                height: 580px;
+                padding: 0px 50px 50px;
+                overflow-y: auto;
+                
+                h5{
+                    margin-top: 11px;
+                }
+            }
+        }
+    }
+    
+    h5{
+      font-size: 14px;
+      margin-top: 21px;
+      position: relative;
+      padding-left: 16px;
+
+      &::before{
+        content: "";
+        width: 2px;
+        height: 25px;
+        background-color: $c_3;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+    }
+    
+    table{
+      margin-top: 100px;
+
+      &.m30{
+          margin-top: 120px;
+
+          tr{
+              line-height: 1.5rem;
+          }
+          th{
+            height: 38px;
+          }
+          td{
+              height: 30px;
+          }
+      }
+      tr{
+        line-height: 2rem;
+        &:hover{
+          background: #ddd;
+        }
+      }
+      th{
+        border-top: solid 2px $c_3;
+        background: #eee;
+        height: 40px;
+        font-weight: normal;
+
+        &.w80{
+          width: 80px;
+        }
+        &.w150{
+          width: 150px;
+        }
+      }
+      td{
+        text-align: center;
+        border-bottom: solid 1px #eee;
+        height: 32px;
+        cursor: pointer;
+        }    
+    }
+
+
+    .modalChart-figure{
+      width: 90%;
+
+      &.full{
+        margin-top: 62px;
+      }
+      &.rel{
+          position: relative;
+          margin-top: 25px;
+      }  
+    }
+
+    #indivChart{
+      height: 415px;
+    }
+
+    .compWrap{
+      margin: 16px 0 0;
+      position: relative;
+
+      &.abs{
+        position: absolute;
+        top: -20px;
+        left: -40px;
+        z-index: 1002;
+      }
+      
+      li{
+          vertical-align: top;
+      }
+
+      button{
+        border-radius: 4px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        background: rgb(133,147,173);
+
+        &:hover{
+          background-color: rgb(17,75,122);
+        }
+        
+      }
+
+      .btnWrap{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        &.notiBtn{
+          bottom: -70px;
+          right: 0;
+        }
+
+        button{
+          height: 35px;
+          width: 120px;
+        }
+      }
+
+      .btnWrap2{
+
+        button{
+          width: 35px;
+          height: 35px;
+          margin-right: 4px;
+
+          &:hover{
+            background-color: rgb(17,75,122);
+          }
+        }
+        .left2{
+          background: url(../img/icon_left2.png) no-repeat 50% 50% rgb(133,147,173);
+        }
+        .left1{
+          background: url(../img/icon_left.png) no-repeat 50% 50% rgb(133,147,173);
+        }
+        .right1{
+          background: url(../img/Icon_right.png) no-repeat 50% 50% rgb(133,147,173);
+        }
+        .right2{
+          background: url(../img/Icon_right2.png) no-repeat 50% 50% rgb(133,147,173);
+        }
+        .minus{
+          background: url(../img/Icon_minus.png) no-repeat 50% 50% rgb(133,147,173);
+        }
+        .plus{
+          background: url(../img/Icon_plus.png) no-repeat 50% 50% rgb(133,147,173);
+        }
+  
+      }
+
+      .compBox{
+        margin-right: 16px;
+        display: inline-block;
+
+        label{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 35px;
+        margin-right: 16px;
+        vertical-align: top;
+        }
+
+        .compSelect{
+          width: 100px;
+          height: 35px;
+          border-radius: 4px;
+          background: url(../img/icon_selectbox.png) no-repeat 95% 50% #fff; /* 네이티브 화살표를 커스텀 화살표로 대체 */
+          border: 1px solid #999;
+          -webkit-appearance: none; /* 네이티브 외형 감추기 */
+          -moz-appearance: none;
+          appearance: none;
+          outline: none;
+          font-size: 16px;
+          vertical-align: top;
+
+          &.x2{
+            width: 200px;
+          }
+          option{
+            margin-left: 0;
+            color: #999;
+          }
+        }
+
+        .compSelect:focus{
+          border: 1px solid $c_3;
+        }
+      }
+    }
+  }
+  //모달창
